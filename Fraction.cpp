@@ -29,17 +29,38 @@ int main(){
         {1} , {2,3} , {4,5,6} , {7,8,9,10} , {11,12,13,14,15}
     */
 
-     int n;
+     long long n;
      int sum = 1;
+     int a;
+     int b;
 
      cin >> n;
 
-     while(sum*(sum+1)/2 <= n){
+     while(sum*(sum+1)/2 < n){
         sum++;
      }
 
-     cout << sum;
+    // if n = 14 , sum = 5
+
+     if(n == 1){
+        cout << "1/1";
+        return 0;
+     }
+
+     if(sum%2 == 1){
+        b = n - (sum-1)*sum/2;
+        a = (sum+1)-b;
+
+        cout << a << "/" << b;
+     }
+     else{
+        a = n - (sum-1)*sum/2;
+        b = (sum+1)-a;
+
+        cout << a << "/" << b;
+     }
+
      // there are (sum-1) ways to make fractions
 
-     int a, b;
+    
 }
